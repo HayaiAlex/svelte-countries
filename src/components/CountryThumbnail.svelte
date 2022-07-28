@@ -21,6 +21,7 @@
 
 {#if show}
     <a
+        sveltekit:prefetch
         href="/svelte-countries/country/{country.name.common}"
         class="bg-white rounded w-56 shadow"
     >

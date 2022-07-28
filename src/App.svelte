@@ -1,4 +1,3 @@
-
 <!-- Your users should be able to:
 
 - See all countries from the API on the homepage
@@ -7,23 +6,29 @@
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)* -->
-
 <script>
-import Header from './lib/Header.svelte';
-import MainSearch from './lib/MainSearch.svelte';
+  import router from "page";
+  import Index from "./routes/Index.svelte";
+  import Country from "./routes/Country.svelte";
+  import NotFound from "./routes/NotFound.svelte";
+  import Header from "./components/Header.svelte";
 
-async function getData() {
-  let data = await fetch('https://restcountries.com/v3.1/all');
-  let json = await data.json();
-  console.log(json);
-}
+  let page;
+  let params;
 
-getData();
+  router("/", () => (page = Index));
+  router(
+    "/country/:countryName",
+    (ctx, next) => {
+      params = ctx.params;
+      next();
+    },
+    () => (page = Country)
+  );
+  router("/*", () => (page = NotFound));
+
+  router.start();
 </script>
 
 <Header />
-
-<MainSearch />
-
-<style>
-</style>
+<svelte:component this={page} {params} />

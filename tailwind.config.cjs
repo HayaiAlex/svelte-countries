@@ -3,7 +3,9 @@ const config = {
 
   theme: {
     extend: {
-      borderWidth: { DEFAULT: '1px', 0: '0', 2: '2px', 3: '3px' },
+      borderWidth: { 3: '3px' },
+      invert: { 4: '40%' },
+      boxShadow: { 'strong': '0 0 4px 0 rgba(0, 0, 0, 0.3)' }
     },
   },
 

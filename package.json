@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "start": "sirv public --single",
-    "deploy": "node ./gh-pages.js",
+    "deploy": "npx gh-pages -d dist",
     "preview": "vite preview"
   },
   "devDependencies": {

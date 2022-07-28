@@ -50,7 +50,7 @@
 
 <main class="bg-white h-screen w-screen pt-6 px-8">
     <a
-        href="http://hayaialex.github.io/svelte-countries/"
+        href="/svelte-countries/"
         class="flex items-center gap-2 shadow-strong w-max py-1 px-6 rounded"
     >
         <Fa icon={faArrowLeftLong} />
@@ -103,7 +103,7 @@
                             {#each country.borders as country}
                                 <a
                                     target="/"
-                                    href={"http://hayaialex.github.io/svelte-countries/country/" +
+                                    href={"/svelte-countries/country/" +
                                         getNameFromCode(country)}
                                     class="px-4 py-0.25 rounded shadow-strong"
                                 >

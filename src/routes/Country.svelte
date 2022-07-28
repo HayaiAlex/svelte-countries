@@ -50,7 +50,7 @@
 
 <main class="bg-white h-screen w-screen pt-6 px-8">
     <a
-        href="http://127.0.0.1:5173/"
+        href="http://hayaialex.github.io/svelte-countries/"
         class="flex items-center gap-2 shadow-strong w-max py-1 px-6 rounded"
     >
         <Fa icon={faArrowLeftLong} />

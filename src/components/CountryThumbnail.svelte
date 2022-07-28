@@ -21,8 +21,7 @@
 
 {#if show}
     <a
-        href="http://hayaialex.github.io/svelte-countries/country/{country.name
-            .common}"
+        href="/country/{country.name.common}"
         class="bg-white rounded w-56 shadow"
     >
         <img class="rounded-t h-36 w-full" src={country.flags.svg} alt="flag" />

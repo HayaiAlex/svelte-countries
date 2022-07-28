@@ -4,20 +4,7 @@
     import Filter from "../components/Filter.svelte";
     import CountryThumbnail from "../components/CountryThumbnail.svelte";
 
-    import { countryData, namedCountryData } from "../stores/Stores";
-
-    const getData = async () => {
-        let data = await fetch("https://restcountries.com/v3.1/all");
-        $countryData = await data.json();
-        console.log($countryData);
-        let newData = {};
-        $countryData.forEach((country) => {
-            newData[country.name.common] = country;
-        });
-        $namedCountryData = newData;
-    };
-
-    getData();
+    import { countryData } from "../stores/Stores";
 </script>
 
 <main class="bg-gray-50 h-screen w-screen pt-6 px-8">

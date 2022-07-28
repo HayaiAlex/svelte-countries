@@ -20,7 +20,10 @@
 </script>
 
 {#if show}
-    <div class="bg-white rounded w-56 shadow">
+    <a
+        href="http://127.0.0.1:5173/Country/{country.name.common}"
+        class="bg-white rounded w-56 shadow"
+    >
         <img class="rounded-t h-36 w-full" src={country.flags.svg} alt="flag" />
 
         <!-- content -->
@@ -54,5 +57,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 {/if}

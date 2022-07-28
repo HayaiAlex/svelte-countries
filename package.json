@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "start": "sirv public --single",
+    "deploy": "node ./gh-pages.js",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "autoprefixer": "^10.4.7",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "svelte": "^3.49.0",

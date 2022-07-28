@@ -102,7 +102,6 @@
                         <div class="flex flex-wrap gap-2">
                             {#each country.borders as country}
                                 <a
-                                    target="/"
                                     href={"/svelte-countries/country/" +
                                         getNameFromCode(country)}
                                     class="px-4 py-0.25 rounded shadow-strong"

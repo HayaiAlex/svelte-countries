@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { namedCountryData, countryData } from "../stores/Stores";
 
+    import page from "page";
     import Fa from "svelte-fa";
     import {
         faArrowLeftLong,
@@ -50,7 +51,6 @@
 
 <main class="bg-white h-screen w-screen pt-6 px-8">
     <a
-        sveltekit:prefetch
         href="/svelte-countries/"
         class="flex items-center gap-2 shadow-strong w-max py-1 px-6 rounded"
     >
@@ -103,7 +103,6 @@
                         <div class="flex flex-wrap gap-2">
                             {#each country.borders as country}
                                 <a
-                                    target="_self"
                                     href={"/svelte-countries/country/" +
                                         getNameFromCode(country)}
                                     class="px-4 py-0.25 rounded shadow-strong"

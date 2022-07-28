@@ -40,7 +40,7 @@
   let page;
   let params;
 
-  router("/", () => (page = Index));
+  router("/svelte-countries/", () => (page = Index));
   router(
     "/country/:countryName",
     (ctx, next) => {

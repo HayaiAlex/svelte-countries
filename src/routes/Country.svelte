@@ -103,7 +103,7 @@
                             {#each country.borders as country}
                                 <a
                                     target="/"
-                                    href={"http://127.0.0.1:5173/Country/" +
+                                    href={"http://hayaialex.github.io/svelte-countries/country/" +
                                         getNameFromCode(country)}
                                     class="px-4 py-0.25 rounded shadow-strong"
                                 >

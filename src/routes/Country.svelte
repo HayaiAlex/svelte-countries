@@ -112,7 +112,10 @@
                             <div class="flex flex-wrap gap-2">
                                 {#each country.borders as country}
                                     <a
-                                        on:click={getCountryName}
+                                        on:click={() =>
+                                            setTimeout(() => {
+                                                getCountryName();
+                                            }, 50)}
                                         href="/svelte-countries/country/{getNameFromCode(
                                             country
                                         )}"

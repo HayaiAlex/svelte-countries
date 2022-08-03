@@ -16,8 +16,10 @@
     let status = "loading";
     let country = {};
 
-    const getCountryName = async () => {
+    const getCountryName = async (update) => {
         countryName = params.countryName;
+        console.log(window.location.href);
+        console.log(`country name ${countryName}`);
     };
 
     const update = (countryName, data) => {
@@ -35,7 +37,6 @@
     };
 
     const getNameFromCode = (code) => {
-        console.log($countryData);
         for (const country in $countryData) {
             if (code === $countryData[country].cca3) {
                 return $countryData[country].name.common;
@@ -50,13 +51,13 @@
 </script>
 
 <div class={$darkMode}>
-    <main class="bg-white dark:bg-gray-800 pt-6 px-8">
+    <main class="bg-white dark:bg-gray-800 h-screen pt-6 px-8">
         <a
             href="/svelte-countries/"
             class="flex items-center gap-2 shadow-strong w-max py-1 px-6 rounded dark:bg-gray-600"
         >
-            <Fa class="text-white" icon={faArrowLeftLong} />
-            <p class="text-white">Back</p>
+            <Fa class="dark:text-white" icon={faArrowLeftLong} />
+            <p class="dark:text-white">Back</p>
         </a>
 
         {#if status === "found"}
@@ -111,8 +112,10 @@
                             <div class="flex flex-wrap gap-2">
                                 {#each country.borders as country}
                                     <a
-                                        href={"/svelte-countries/country/" +
-                                            getNameFromCode(country)}
+                                        on:click={getCountryName}
+                                        href="/svelte-countries/country/{getNameFromCode(
+                                            country
+                                        )}"
                                         class="px-4 py-0.25 rounded shadow-strong dark:bg-gray-600 dark:text-gray-200"
                                     >
                                         {getNameFromCode(country)}

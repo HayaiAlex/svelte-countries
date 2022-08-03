@@ -1,4 +1,5 @@
 <script>
+    import { darkMode } from "../stores/Stores";
     export let label;
     export let stat;
 
@@ -19,7 +20,7 @@
     }
 </script>
 
-<div class="flex gap-1">
-    <h3 class="text-gray-800 font-semibold">{label}</h3>
-    <p class="text-gray-600">{stat}</p>
+<div class="{$darkMode} flex gap-1">
+    <h3 class="text-gray-800 font-semibold dark:text-white">{label}</h3>
+    <p class="text-gray-600 dark:text-gray-200">{stat}</p>
 </div>

@@ -23,16 +23,25 @@
 <div class={$darkMode}>
   <button
     on:click={toggleOpen}
-    class="relative cursor-pointer bg-white shadow flex items-center justify-between gap-4 py-2 px-4 rounded  w-40 h-full dark:bg-gray-600 transition"
+    class="group relative cursor-pointer bg-white shadow flex items-center justify-between gap-4 py-2 px-4 rounded h-10 w-40 dark:bg-gray-600 transition"
   >
     {#if $filter}
-      <p class="text-xs font-semibold dark:text-white">
+      <p
+        class="group-hover:text-gray-400 text-xs font-semibold dark:text-white"
+      >
         {$filter}
       </p>
     {:else}
-      <p class="text-xs font-semibold dark:text-white">Filter by Region</p>
+      <p
+        class="group-hover:text-gray-400 text-xs font-semibold dark:text-white"
+      >
+        Filter by Region
+      </p>
     {/if}
-    <Fa class="text-xs dark:text-white" icon={faChevronDown} />
+    <Fa
+      class="group-hover:text-gray-400 text-xs dark:text-white"
+      icon={faChevronDown}
+    />
 
     {#if optionsOpen}
       <ul

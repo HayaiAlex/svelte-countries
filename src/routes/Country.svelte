@@ -51,65 +51,76 @@
 </script>
 
 <div class={$darkMode}>
-    <main class="bg-white dark:bg-gray-800 h-screen pt-6 px-8">
+    <main class="bg-white dark:bg-gray-700 transition h-screen pt-6 px-8">
         <a
             href="/svelte-countries/"
-            class="flex items-center gap-2 shadow-strong w-max py-1 px-6 rounded dark:bg-gray-600"
+            class="flex items-center gap-2 shadow-strong w-max py-1 px-6 rounded dark:bg-gray-600 transition"
         >
-            <Fa class="dark:text-white" icon={faArrowLeftLong} />
-            <p class="dark:text-white">Back</p>
+            <Fa class="dark:text-white transition" icon={faArrowLeftLong} />
+            <p class="dark:text-white transition">Back</p>
         </a>
 
         {#if status === "found"}
-            <div class="mt-4 flex md:flex-row flex-col gap-10 items-center">
+            <div
+                class="mt-8 flex items-start sm:flex-row flex-col gap-8 sm:gap-16"
+            >
                 <img
-                    class="w-5/12"
+                    class="sm:mt-8 mt-0 w-auto sm:w-5/12 sm:object-scale-down"
                     src={country.flags.svg}
                     alt="Flag of {country.name.common}"
                 />
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-8">
                     <h2 class="font-bold text-2xl dark:text-white">
                         {country.name.common}
                     </h2>
-                    <div class="grid mt-4">
-                        <CountryStat
-                            label={"Native Name:"}
-                            stat={country.altSpellings[1]}
-                        />
-                        <CountryStat
-                            label={"Population:"}
-                            stat={country.population}
-                        />
-                        <CountryStat label={"Region:"} stat={country.region} />
+                    <div class="flex flex-col lg:flex-row gap-8 sm:gap-12">
+                        <div class="flex flex-col gap-2">
+                            <CountryStat
+                                label={"Native Name:"}
+                                stat={country.altSpellings[1]}
+                            />
+                            <CountryStat
+                                label={"Population:"}
+                                stat={country.population}
+                            />
+                            <CountryStat
+                                label={"Region:"}
+                                stat={country.region}
+                            />
 
-                        <CountryStat
-                            label={"Sub Region:"}
-                            stat={country.subregion}
-                        />
-                        <CountryStat
-                            label={"Capital:"}
-                            stat={country.capital[0]}
-                        />
+                            <CountryStat
+                                label={"Sub Region:"}
+                                stat={country.subregion}
+                            />
+                            <CountryStat
+                                label={"Capital:"}
+                                stat={country.capital[0]}
+                            />
+                        </div>
 
-                        <CountryStat
-                            label={"Top Level Domain:"}
-                            stat={country.tld[0]}
-                        />
-                        <CountryStat
-                            label={"Currencies:"}
-                            stat={country.currencies}
-                        />
-                        <CountryStat
-                            label={"Languages:"}
-                            stat={country.languages}
-                        />
+                        <div class="flex flex-col gap-2">
+                            <CountryStat
+                                label={"Top Level Domain:"}
+                                stat={country.tld[0]}
+                            />
+                            <CountryStat
+                                label={"Currencies:"}
+                                stat={country.currencies}
+                            />
+                            <CountryStat
+                                label={"Languages:"}
+                                stat={country.languages}
+                            />
+                        </div>
                     </div>
-                    <div class="flex gap-2 items-center mt-4">
-                        <h3 class="font-semibold mr-2 dark:text-white">
+                    <div class="flex flex-col sm:flex-row gap-4  mt-4 mb-12">
+                        <h3
+                            class="font-semibold whitespace-nowrap mr-2 dark:text-white"
+                        >
                             Border Countries:
                         </h3>
                         {#if country.borders}
-                            <div class="flex flex-wrap gap-2">
+                            <div class="flex flex-wrap gap-3">
                                 {#each country.borders as country}
                                     <a
                                         on:click={() =>
@@ -119,7 +130,7 @@
                                         href="/svelte-countries/country/{getNameFromCode(
                                             country
                                         )}"
-                                        class="px-4 py-0.25 rounded shadow-strong dark:bg-gray-600 dark:text-gray-200"
+                                        class="px-4 py-0.25 rounded shadow-strong dark:bg-gray-600 dark:text-gray-200 transition"
                                     >
                                         {getNameFromCode(country)}
                                     </a>

@@ -3,8 +3,11 @@
     export let label;
     export let stat;
 
+    let wrap = "sm:whitespace-nowrap";
+
     const objParser = (stat) => {
         if (typeof stat === "object") {
+            wrap = "";
             console.log(stat);
             let newStat = "";
             for (const data in stat) {
@@ -27,6 +30,10 @@
 </script>
 
 <div class="{$darkMode} flex gap-1">
-    <h3 class="text-gray-800 font-semibold dark:text-white">{label}</h3>
-    <p class="text-gray-600 dark:text-gray-200">{statText}</p>
+    <h3 class="text-gray-800 {wrap} font-semibold dark:text-white">
+        {label}
+    </h3>
+    <p class="text-gray-600 {wrap} dark:text-gray-200">
+        {statText}
+    </p>
 </div>

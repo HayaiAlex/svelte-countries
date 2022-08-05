@@ -6,8 +6,10 @@
 
   const toggleDarkMode = () => {
     if (!$darkMode) {
+      window.localStorage.setItem("theme", "dark");
       $darkMode = "dark";
     } else {
+      window.localStorage.setItem("theme", "");
       $darkMode = "";
     }
     console.log(`Dark mode set to ${$darkMode}`);
@@ -16,17 +18,20 @@
 
 <div class={$darkMode}>
   <div
-    class="flex items-center py-3 px-8 w-full bg-white border-b-3 border-gray-100 dark:bg-slate-600 dark:border-slate-800 transition"
+    class="flex items-center py-3 px-8 w-full h-20 bg-white border-b-3 border-gray-100 dark:bg-gray-600 dark:border-gray-800 transition"
   >
     <a
       href="/svelte-countries/"
-      class="text-2xl font-extrabold mr-auto dark:text-white"
+      class="hover:text-gray-700 text-md sm:text-2xl font-extrabold mr-auto dark:text-white"
       >Where in the world?</a
     >
 
     <div on:click={toggleDarkMode}>
-      <Fa class="cursor-pointer mr-1 w-4 dark:text-white" icon={faMoon} />
+      <Fa
+        class="hover:text-gray-700 cursor-pointer text-sm sm:text-lg mr-1 w-4 dark:text-white"
+        icon={faMoon}
+      />
     </div>
-    <p class="font-semibold dark:text-white">Dark Mode</p>
+    <p class="font-semibold text-sm sm:text-lg dark:text-white">Dark Mode</p>
   </div>
 </div>

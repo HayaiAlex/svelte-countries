@@ -4,4 +4,6 @@ export let searchTerm = writable('');
 export let filter = writable('');
 export let countryData = writable([]);
 export let namedCountryData = writable({});
-export let darkMode = writable("");
+
+let userTheme = window.localStorage.getItem("theme")
+export let darkMode = writable(userTheme ? userTheme : "");

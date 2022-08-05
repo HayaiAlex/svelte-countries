@@ -21,7 +21,9 @@
 
 {#if show}
     <a href="/svelte-countries/country/{country.name.common}" class={$darkMode}>
-        <div class="w-56 shadow rounded bg-white dark:bg-gray-600">
+        <div
+            class="hover:scale-105 w-64 shadow rounded bg-white dark:bg-gray-600 transition-all"
+        >
             <img
                 class="rounded-t h-36 w-full"
                 src={country.flags.svg}

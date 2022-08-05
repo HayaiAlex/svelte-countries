@@ -8,7 +8,7 @@
 
 <div class={$darkMode}>
   <div
-    class="bg-white shadow flex items-center gap-4 py-1 px-3 rounded w-max dark:bg-gray-600 transition"
+    class="w-auto max-w-sm bg-white shadow flex items-center gap-4 py-1 px-3 rounded dark:bg-gray-600 transition"
   >
     <Fa
       class="text-gray-400 dark:text-white transition"

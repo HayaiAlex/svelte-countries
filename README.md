@@ -1,6 +1,6 @@
 # REST Countries API with colour theme changer.
 
-This single page application uses Svelte, Tailwind CSS and RESTful API to display country information. I really enjoyed learning and using Svelte which appears very accessible, modular, and legible by having the logic when the HTML I can quickly understand and implement features. I found defining my state in a separate file and importing it to any page that required it to be a very useful method of accessing my state.
+This single page application uses Svelte, Tailwind CSS and RESTful API to display country information. I really enjoyed learning and using Svelte. This framework seems very accessible, modular, and legible to me by having the logic as part of the HTML which allows me to quickly understand and implement features. I found defining my state in a separate file and importing it to any page that required it to be a very useful method of accessing my state.
 
 My biggest challenge I came across during creating this website was with my routing. When visiting a new country page through a 'bordering country' button my code would not update the country name to call the API correctly. I fixed this by adding a small delay when getting the name from the browser's address bar.
 
